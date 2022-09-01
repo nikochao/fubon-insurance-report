@@ -1,4 +1,5 @@
 import check
+search()
 def search():
 	account='U800012164'
 	password='Dswa1314'
