@@ -14,6 +14,8 @@ import analyze
 options = Options()
 options.binary_location=os.environ.get("GOOGLE_CHROME_BIN")    
 options.add_argument("--headless")
+options.addArguments("--no-sandbox")
+options.addArguments("--disable-gpu")
 browser = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), chrome_options=options)
 
 def script(account,password,email_address):
