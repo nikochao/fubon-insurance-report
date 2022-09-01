@@ -8,6 +8,8 @@ from linebot.exceptions import (
 )
 from linebot.models import*
 
+import main
+
 app = Flask(__name__)
 
 line_bot_api = LineBotApi('7fmxuM5SubOVtJNhKxjuGKgjIkNfk6HRLmPGTZRzEdEVRUnyYN84tG7J/qfkLmupzljtR4MNi0FgCbZIltrOVCe6uVfI21NL/IyTreMSM3Nn2+GtLAALxZtyydDXZ7M63DJEKW4osr0P34QIbJE0MwdB04t89/1O/w1cDnyilFU=')
@@ -35,9 +37,11 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
-    line_bot_api.reply_message(
-        event.reply_token,
-        TextSendMessage(text=event.message.text))
+    if event.message.text=="保險進度":
+        main.search()
+        line_bot_api.reply_message(
+            event.reply_token,
+            TextSendMessage(text="已寄電子郵件"))
 
 
 import os
