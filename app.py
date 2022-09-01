@@ -32,14 +32,15 @@ def callback():
 # 學你說話
 @handler.add(MessageEvent, message=TextMessage)
 def echo(event):
-    if event.message.text=="保險進度":
-        main.search()
+    
+    # 這次我加了下面這一行
+    if event.source.user_id != "Udeadbeefdeadbeefdeadbeefdeadbeef":
+    # 這次我加了上面這一行
+    
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text='已經寄信通知囉！')
+            TextSendMessage(text=event.message.text)
         )
-
-
 
 if __name__ == "__main__":
     app.run()
