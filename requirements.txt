@@ -5,9 +5,12 @@ charset-normalizer==2.1.1
 coloredlogs==15.0.1
 ddddocr==1.4.7
 flatbuffers==2.0.7
+Flask==1.1.1
+gunicorn==19.9.0
 h11==0.13.0
 humanfriendly==10.0
 idna==3.3
+line-bot-sdk==1.14.0
 mpmath==1.2.1
 numpy==1.23.2
 onnxruntime==1.12.1
