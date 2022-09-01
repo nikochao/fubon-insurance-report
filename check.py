@@ -10,14 +10,14 @@ import requests
 import emails
 import analyze
 
+options = Options()
+options.binary_location=os.environ.get("GOOGLE_CHROME_BIN")    
+options.add_argument("--headless")
+browser = webdriver.Chrome(executable_path=ps.environ.get("CHROMEDRIVER PATH"), chrome_options=options)
+
 def script(account,password,email_address):
     times=0;
 
-
-    options = Options()
-    options.add_argument("--headless")
-
-    browser = webdriver.Chrome(ChromeDriverManager().install(), chrome_options=options)
     browser.get('https://b2c.518fb.com/FubonEC/claims_search.jsp')
       
 
